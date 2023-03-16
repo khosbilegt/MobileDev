@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clear_day">https://openweathermap.org/img/wn/01d@2x.png</string>
+    <string name="clear_night">https://openweathermap.org/img/wn/01n@2x.png</string>
+    <string name="cloudy_day">https://openweathermap.org/img/wn/03d@2x.png</string>
+    <string name="cloudy_night">https://openweathermap.org/img/wn/03n@2x.png</string>
+    <string name="rainy_day">https://openweathermap.org/img/wn/10d@2x.png</string>
+    <string name="rainy_night">https://openweathermap.org/img/wn/10n@2x.png</string>
+    <string name="snow">https://openweathermap.org/img/wn/13d@2x.png</string>
+</resources>
