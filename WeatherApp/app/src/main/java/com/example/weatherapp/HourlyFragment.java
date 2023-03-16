@@ -33,7 +33,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class HourlyFragment extends Fragment {
-    private final String API_KEY = "d405cb60bda80d5315053714d415c638";
     public List<Weather> weatherList = new ArrayList<Weather>();
 
     public HourlyFragment() {
@@ -43,7 +42,7 @@ public class HourlyFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getInfo();
+        //getInfo();
     }
 
     @Override
@@ -53,7 +52,8 @@ public class HourlyFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_hourly, container, false);
     }
 
-    private void setView() {
+    public void setView(List<Weather> weatherList) {
+        this.weatherList = weatherList;
         int index = setBackground();
         List<Weather> weatherListHourly = new ArrayList<Weather>();
         for(int i = index; i < index + 8; i++) {
@@ -85,70 +85,42 @@ public class HourlyFragment extends Fragment {
                 }
             }
         }
-        String type = weatherList.get(index).getType();
+        String icon = weatherList.get(index).getIcon();
         boolean isDay = hour < 20 && hour > 8;
-        setBackgroundImage(type, isDay);
+        setBackgroundImage(icon, isDay);
         return index;
     }
-    void setBackgroundImage(String type, boolean isDay) {
+    void setBackgroundImage(String icon, boolean isDay) {
         ConstraintLayout layout = getActivity().findViewById(R.id.constraint_main);
         Drawable background;
-        switch(type) {
-            case "Clear":
-                if(isDay) {
-                    background = getResources().getDrawable(R.drawable.clear_day);
-                } else {
-                    background = getResources().getDrawable(R.drawable.clear_night);
-                }
-                break;
-            case "Rain":
-                if(isDay) {
-                    background = getResources().getDrawable(R.drawable.cloudy_day);
-                } else {
-                    background = getResources().getDrawable(R.drawable.cloudy_night);
-                }
-                break;
-            case "Snow":
-                if(isDay) {
-                    background = getResources().getDrawable(R.drawable.snow_day);
-                } else {
-                    background = getResources().getDrawable(R.drawable.snow_day);
-                }
-                break;
-            default:
-                if(isDay) {
-                    background = getResources().getDrawable(R.drawable.rain_day);
-                } else {
-                    background = getResources().getDrawable(R.drawable.rain_night);
-                }
+        System.out.println("Icon: " + icon);
+        if(icon.contains("01d")) {
+            background = getResources().getDrawable(R.drawable.clear_night);
+        }
+        else if(icon.contains("01n")) {
+            background = getResources().getDrawable(R.drawable.clear_day);
+        }
+        else if(icon.contains("09d") || icon.contains("10d") || icon.contains("11d")) {
+            background = getResources().getDrawable(R.drawable.rain_night);
+        }
+        else if(icon.contains("09n") || icon.contains("10n") || icon.contains("11n")) {
+            background = getResources().getDrawable(R.drawable.rain_day);
+        }
+        else if(icon.contains("13")) {
+            if (isDay) {
+                background = getResources().getDrawable(R.drawable.snow_day);
+            } else {
+                background = getResources().getDrawable(R.drawable.snow_day);
+            }
+        }
+        else {
+            if (isDay) {
+            background = getResources().getDrawable(R.drawable.cloudy_day);
+            } else {
+                background = getResources().getDrawable(R.drawable.cloudy_night);
+            }
         }
         layout.setBackground(background);
     }
-    private void getInfo() {
-        RequestQueue volleyQueue = Volley.newRequestQueue(getActivity());
-        int latitude = 48;
-        int longitude = 107;
-        String units = "metric";
-        String url = "https://api.openweathermap.org/data/2.5/forecast?"
-                + "lat="+ String.valueOf(latitude)
-                + "&lon=" + String.valueOf(longitude)
-                + "&appid=" + API_KEY
-                + "&units=" + units;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                (Response.Listener<JSONObject>) response -> {
-                    JsonHelper helper = new JsonHelper();
-                    weatherList = helper.parseWeather(response);
-                    setView();
-                },
-                (Response.ErrorListener) error -> {
-                    Toast.makeText(getActivity(), "Some error occurred! Cannot fetch dog image", Toast.LENGTH_LONG).show();
-                    Log.e("MainActivity", "loadDogImage error: ${error.localizedMessage}");
-                }
-        );
-        volleyQueue.add(jsonObjectRequest);
-    }
 }

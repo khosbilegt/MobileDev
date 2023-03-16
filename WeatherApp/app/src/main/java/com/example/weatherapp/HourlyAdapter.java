@@ -2,7 +2,6 @@ package com.example.weatherapp;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Calendar;
 import java.util.List;
 
 public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder> {
@@ -25,9 +23,9 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            hourlyTime = itemView.findViewById(R.id.text_hourly_time);
-            hourlyTemperature = itemView.findViewById(R.id.text_hourly_temp);
-            imageView = itemView.findViewById(R.id.image_hourly);
+            hourlyTime = itemView.findViewById(R.id.text_daily_day);
+            hourlyTemperature = itemView.findViewById(R.id.text_daily_temp);
+            imageView = itemView.findViewById(R.id.image_daily);
             resources = itemView.getResources();
         }
     }
@@ -44,7 +42,7 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder
     public HourlyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View weatherView = inflater.inflate(R.layout.hourly_item, parent, false);
+        View weatherView = inflater.inflate(R.layout.item_hourly, parent, false);
         ViewHolder viewHolder = new ViewHolder(weatherView);
         return viewHolder;
     }

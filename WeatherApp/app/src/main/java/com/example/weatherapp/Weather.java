@@ -1,5 +1,6 @@
 package com.example.weatherapp;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -34,6 +35,28 @@ public class Weather {
 
     public Weather() {
 
+    }
+
+    public String getDayOfWeek() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        switch(dayOfWeek) {
+            case 1:
+                return "Monday";
+            case 2:
+                return "Tuesday";
+            case 3:
+                return "Wednesday";
+            case 4:
+                return "Thursday";
+            case 5:
+                return "Friday";
+            case 6:
+                return "Saturday";
+            default:
+                return "Sunday";
+        }
     }
 
     public String getIcon() {

@@ -22,7 +22,6 @@ public class JsonHelper {
                 parseMain(main, weather);
                 parseWeather(weatherJson, weather);
                 parseWind(wind, weather);
-                System.out.println(i + ": " + weather.getTime() + " " + weather.getIcon());
                 weatherList.add(weather);
             }
         } catch (JSONException e) {
