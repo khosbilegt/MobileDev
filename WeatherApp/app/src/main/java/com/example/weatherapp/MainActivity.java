@@ -6,8 +6,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -66,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
         volleyQueue.add(jsonObjectRequest);
+    }
+
+    public void refresh(View view) {
+        Context context = getApplicationContext();
+        CharSequence text = "Refreshed";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+        getInfo();
     }
 }

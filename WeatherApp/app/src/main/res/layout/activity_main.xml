@@ -20,13 +20,22 @@
         android:id="@+id/daily_fragment_container"
         android:name="com.example.weatherapp.DailyFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="275dp"
+        android:layout_marginTop="40dp"
         android:tag="dailyFragment"
         app:layout_constraintTop_toBottomOf="@+id/hourly_fragment_container"
         app:layout_goneMarginBottom="30dp"
         tools:layout="@layout/fragment_daily" />
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="39dp"
+        android:layout_height="44dp"
+        android:onClick="refresh"
+        app:layout_constraintEnd_toEndOf="@+id/appBarLayout"
+        app:srcCompat="@drawable/ic_refresh"
+        tools:layout_editor_absoluteY="-4dp" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -36,7 +45,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:alpha="0"
             android:background="#4D000000"
             android:backgroundTint="#4D000000"

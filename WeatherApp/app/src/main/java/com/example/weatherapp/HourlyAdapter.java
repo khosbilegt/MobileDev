@@ -77,9 +77,11 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder
 
     private void setIcon(@NonNull HourlyAdapter.ViewHolder holder, int position) {
         String icon = weatherList.get(position).getIcon();
-        String url = "https://openweathermap.org/img/wn/" + icon + "@4x.png";
+        String imageName = "w" + icon;
+        Context context = fragment.getContext();
+        int resourceId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
         ImageView imageView = holder.imageView;
-        new AsyncDownloadImage((ImageView) imageView).execute(url);
+        imageView.setImageDrawable(context.getResources().getDrawable(resourceId));
     }
 
     @Override

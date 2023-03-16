@@ -8,5 +8,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dailyView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="275dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </FrameLayout>
