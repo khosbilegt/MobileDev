@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +16,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:background="#000000" />
 
             <CheckBox
                 android:id="@+id/taskIsDone"
@@ -36,13 +44,26 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
+            <View
+                android:id="@+id/view3"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.11"
+                android:background="#000000" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
             <TextView
                 android:id="@+id/taskTimeLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                tools:layout_marginLeft="65dp" />
+                android:layout_weight="8"
+                android:padding="3dp"
+                android:text="TextView" />
         </LinearLayout>
 
     </LinearLayout>

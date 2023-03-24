@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,9 +47,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void addTask(Task task) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(task.getStartDate());
+        String startDate = calendar.get(Calendar.YEAR) + "-"
+                + calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH);
+
+        calendar.setTime(task.getFinishDate());
+        String endDate = calendar.get(Calendar.YEAR) + "-"
+                + calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH);
         values.put(TITLE_COL, task.getTitle());
-        values.put(START_COL, task.getStartDate().toString());
-        values.put(END_COL, task.getFinishDate().toString());
+        values.put(START_COL, startDate);
+        values.put(END_COL, endDate);
         values.put(DONE_COL, Boolean.toString(task.isDone()));
         db.insert(TABLE_NAME, null, values);
         db.close();
