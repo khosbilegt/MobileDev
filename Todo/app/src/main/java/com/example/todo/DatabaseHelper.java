@@ -63,7 +63,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DONE_COL, Boolean.toString(task.isDone()));
         db.insert(TABLE_NAME, null, values);
         db.close();
-        System.out.println("Added Entry");
+    }
+
+    public void modifyTask(int id, Task task) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(task.getStartDate());
+        String startDate = calendar.get(Calendar.YEAR) + "-"
+                + calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH);
+
+        calendar.setTime(task.getFinishDate());
+        String endDate = calendar.get(Calendar.YEAR) + "-"
+                + calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH);
+
+        values.put(TITLE_COL, task.getTitle());
+        values.put(START_COL, startDate);
+        values.put(END_COL, endDate);
+        values.put(DONE_COL, Boolean.toString(task.isDone()));
+
+        db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(id)});
     }
 
     public List<Task> getTasks() {
@@ -77,6 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 task.setDoneFromString(wordCursor.getString(4));
                 task.setId(wordCursor.getInt(0));
                 tasks.add(task);
+                System.out.println(wordCursor.getString(4));
             } while (wordCursor.moveToNext());
         }
         wordCursor.close();

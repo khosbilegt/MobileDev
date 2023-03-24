@@ -4,6 +4,6 @@
     android:shape="line">
     <stroke android:width="30dp"/>
     <solid
-        android:color="@color/cardview_dark_background" />
+        android:color="#FFFFFFFF" />
 </shape>
 

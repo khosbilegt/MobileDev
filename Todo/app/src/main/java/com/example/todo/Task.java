@@ -45,6 +45,10 @@ public class Task {
         return isDone;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setDone(boolean isDone) {
         this.isDone = isDone;
     }
@@ -54,10 +58,7 @@ public class Task {
     }
 
     public void setDoneFromString(String isDone) {
-        if(isDone.equals("true")) {
-            this.isDone = true;
-        }
-        this.isDone = false;
+        this.isDone = Boolean.parseBoolean(isDone);
     }
 
     public static String timeLeft(Date date) {

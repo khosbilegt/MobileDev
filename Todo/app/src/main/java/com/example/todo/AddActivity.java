@@ -3,6 +3,7 @@ package com.example.todo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +14,17 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class AddActivity extends AppCompatActivity {
+    private int id = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
+        Intent intent = getIntent();
+        if(intent.hasExtra("id")) {
+            id = intent.getIntExtra("id", -1);
+        }
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         myToolbar.setTitle("");
@@ -33,7 +40,6 @@ public class AddActivity extends AppCompatActivity {
                 finish();
             }
         });
-
 
         Button createButton = findViewById(R.id.createButton);
         createButton.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +59,11 @@ public class AddActivity extends AppCompatActivity {
                 Task task = new Task(editText.getText().toString(), currentString, finishDate);
 
                 DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
-                dbHandler.addTask(task);
+                if(id > 0) {
+                    dbHandler.modifyTask(id, task);
+                } else {
+                    dbHandler.addTask(task);
+                }
                 finish();
             }
         });

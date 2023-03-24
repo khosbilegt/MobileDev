@@ -1,7 +1,10 @@
 package com.example.todo;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +28,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         CheckBox checkBox;
         TextView textTitle;
         TextView textTimeLeft;
+        View topView;
+        View bottomView;
+        private static final int ADD_CODE = 0;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -33,27 +39,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
             checkBox = itemView.findViewById(R.id.taskIsDone);
             textTitle = itemView.findViewById(R.id.taskTitle);
             textTimeLeft = itemView.findViewById(R.id.taskTimeLeft);
-
-            layout.setOnLongClickListener(new View.OnLongClickListener() {
-                public boolean onLongClick(View v) {
-
-                    return true;
-                }
-            });
-
-            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(isChecked) {
-                        textTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                        textTimeLeft.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                        return;
-                    }
-                    textTitle.setPaintFlags( textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
-                    textTimeLeft.setPaintFlags( textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
-                }
-            });
-
+            topView = itemView.findViewById(R.id.topColor);
+            bottomView = itemView.findViewById(R.id.bottomColor);
         }
     }
 
@@ -78,6 +65,42 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         String itemText = list.get(position).getTitle();
         holder.textTitle.setText(itemText);
         holder.textTimeLeft.setText(Task.timeLeft(list.get(position).getFinishDate()));
+
+        int staticPosition = position;
+        Task task = list.get(staticPosition);
+
+        // Long Click Edit
+        holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), AddActivity.class);
+                intent.putExtra("id", task.getId());
+                ((Activity)holder.itemView.getContext()).startActivityForResult(intent, holder.ADD_CODE);
+                return true;
+            }
+        });
+
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                DatabaseHelper dbHandler = new DatabaseHelper(holder.itemView.getContext());
+                task.setDone(isChecked);
+                dbHandler.modifyTask(task.getId(), task);
+                if(isChecked) {
+                    holder.textTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.textTimeLeft.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.topView.setBackgroundColor(Color.RED);
+                    holder.bottomView.setBackgroundColor(Color.RED);
+                    return;
+                }
+                holder.textTitle.setPaintFlags( holder.textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+                holder.textTimeLeft.setPaintFlags( holder.textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+                holder.topView.setBackgroundColor(Color.BLACK);
+                holder.bottomView.setBackgroundColor(Color.BLACK);
+            }
+        });
+
+        // CheckBox Logic
+        holder.checkBox.setChecked(task.isDone());
     }
 
     @Override

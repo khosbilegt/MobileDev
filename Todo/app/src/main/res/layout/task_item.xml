@@ -18,7 +18,8 @@
             android:orientation="horizontal">
 
             <View
-                android:layout_width="10dp"
+                android:id="@+id/topColor"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
                 android:background="#000000" />
@@ -45,8 +46,8 @@
             android:orientation="horizontal">
 
             <View
-                android:id="@+id/view3"
-                android:layout_width="10dp"
+                android:id="@+id/bottomColor"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.11"
                 android:background="#000000" />
