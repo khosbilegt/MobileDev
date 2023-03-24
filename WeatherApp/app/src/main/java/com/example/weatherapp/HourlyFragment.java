@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -58,7 +59,7 @@ public class HourlyFragment extends Fragment {
         this.weatherList = weatherList;
         int index = setBackground();
         List<Weather> weatherListHourly = new ArrayList<Weather>();
-        for(int i = index; i < index + 8; i++) {
+        for(int i = index + 1; i < index + 8; i++) {
             weatherListHourly.add(weatherList.get(i));
         }
 

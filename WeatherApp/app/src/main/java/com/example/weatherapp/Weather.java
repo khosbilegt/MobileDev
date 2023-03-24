@@ -219,6 +219,13 @@ public class Weather {
         return time;
     }
 
+    public String getTimeAmPm() {
+        if(time < 12) {
+            return String.valueOf(time) + "AM";
+        }
+        return String.valueOf(time) + "PM";
+    }
+
     @Override
     public String toString() {
         return "Weather{" +

@@ -71,8 +71,8 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder
             hourlyTime.setText("Now");
             return;
         }
-        hourlyTime.setText(String.valueOf(weatherList.get(position).getTime()));
-
+        //hourlyTime.setText(String.valueOf(weatherList.get(position).getTime()));
+        hourlyTime.setText(weatherList.get(position).getTimeAmPm());
     }
 
     private void setIcon(@NonNull HourlyAdapter.ViewHolder holder, int position) {

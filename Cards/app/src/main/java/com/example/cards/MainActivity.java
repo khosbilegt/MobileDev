@@ -20,6 +20,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.FileUtils;
 import android.os.ParcelFileDescriptor;
+import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.Menu;
@@ -223,6 +224,19 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = data.getData();
                 WordDatabaseHelper dbHandler = new WordDatabaseHelper(MainActivity.this);
                 dbHandler.parseTextFile(getBaseContext(), uri);
+            }
+        }
+        if(requestCode == OPTIONS_CODE) {
+            SharedPreferences prefs = getBaseContext().getSharedPreferences("CardPreferences", MODE_PRIVATE);
+            if(prefs.getInt("isEnglish", 0) == 0) {
+                isEnglish = false;
+            } else {
+                isEnglish = true;
+            }
+            if(prefs.getInt("isMongolian", 0) == 0) {
+                isMongolian = false;
+            } else {
+                isMongolian = true;
             }
         }
         loadData();
