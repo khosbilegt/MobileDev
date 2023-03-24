@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Task {
+    private int id;
     private String title;
     private Date startDate;
     private Date finishDate;
@@ -41,6 +42,10 @@ public class Task {
 
     public void setDone(boolean isDone) {
         this.isDone = isDone;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDoneFromString(String isDone) {

@@ -64,6 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Task task = new Task(wordCursor.getString(1), wordCursor.getString(2),
                         wordCursor.getString(3));
                 task.setDoneFromString(wordCursor.getString(4));
+                task.setId(wordCursor.getInt(0));
                 tasks.add(task);
             } while (wordCursor.moveToNext());
         }
