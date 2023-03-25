@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int ADD_CODE = 0;
     private boolean seeDone = false;
     private boolean seeNotDone = false;
+    private boolean onlyDate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        handleSpinner();
+        handleDoneSpinner();
+        handleDateSpinner();
         loadCalendar();
         loadData();
     }
@@ -58,13 +60,33 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < list.size(); i++) {
             Task task = list.get(i);
             if(seeDone) {
-                if(task.isDone()) {
-                    relevantList.add(task);
+                if(onlyDate) {
+                    Calendar calendar = Calendar.getInstance();
+                    int today = calendar.get(Calendar.DAY_OF_MONTH);
+                    calendar.setTime(task.getFinishDate());
+                    int finishDay = calendar.get(Calendar.DAY_OF_MONTH);
+                    if(task.isDone() && finishDay == today) {
+                        relevantList.add(task);
+                    }
+                } else {
+                    if(task.isDone()) {
+                        relevantList.add(task);
+                    }
                 }
             }
             if(seeNotDone) {
-                if(!task.isDone()) {
-                    relevantList.add(task);
+                if(onlyDate) {
+                    Calendar calendar = Calendar.getInstance();
+                    int today = calendar.get(Calendar.DAY_OF_MONTH);
+                    calendar.setTime(task.getFinishDate());
+                    int finishDay = calendar.get(Calendar.DAY_OF_MONTH);
+                    if(task.isDone() && finishDay == today) {
+                        relevantList.add(task);
+                    }
+                } else {
+                    if(!task.isDone()) {
+                        relevantList.add(task);
+                    }
                 }
             }
         }
@@ -77,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
     }
 
-    private void handleSpinner() {
+    private void handleDoneSpinner() {
         List<String> options = new ArrayList<String>();
         options.add("All");
         options.add("Done");;
@@ -112,6 +134,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         int selection = sharedPref.getInt("spinner", 0);
+        spinner.setSelection(selection);
+        loadData();
+    }
+
+    private void handleDateSpinner() {
+        List<String> options = new ArrayList<String>();
+        options.add("Only Date");
+        options.add("All Time");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+                R.layout.item_spinner, options);
+        arrayAdapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
+        Spinner spinner = findViewById(R.id.spinner2);
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0) {
+                    onlyDate = true;
+                }
+                else {
+                    onlyDate = false;
+                }
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt("date", position);
+                editor.apply();
+                loadData();
+            }
+            @Override
+            public void onNothingSelected(AdapterView <?> parent) {
+            }
+        });
+        int selection = sharedPref.getInt("date", 0);
         spinner.setSelection(selection);
         loadData();
     }

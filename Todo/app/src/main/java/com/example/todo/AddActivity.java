@@ -18,23 +18,28 @@ import java.util.Date;
 
 public class AddActivity extends AppCompatActivity {
     private int id = -1;
+    DatePicker datePicker;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+        datePicker = findViewById(R.id.datePicker);
+        editText = findViewById(R.id.editText);
 
         Intent intent = getIntent();
         if(intent.hasExtra("id")) {
             id = intent.getIntExtra("id", -1);
+        }
+        if(intent.hasExtra("title")) {
+            editText.setText(intent.getStringExtra("title"));
         }
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         myToolbar.setTitle("");
         setSupportActionBar(myToolbar);
 
-        DatePicker datePicker = findViewById(R.id.datePicker);
-        EditText editText = findViewById(R.id.editText);
 
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -47,28 +52,7 @@ public class AddActivity extends AppCompatActivity {
         Button createButton = findViewById(R.id.createButton);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                int year = datePicker.getYear();
-                int month = datePicker.getMonth();
-                int day = datePicker.getDayOfMonth();
-                String finishDate = String.valueOf(year) + "-" + String.valueOf(month) + "-"
-                        + String.valueOf(day);
-
-                Calendar calendar = Calendar.getInstance();
-                String currentString = String.valueOf(calendar.get(Calendar.YEAR)) + "-"
-                        + String.valueOf(calendar.get(Calendar.MONTH)) + "-"
-                        + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-
-                Task task = new Task(editText.getText().toString(), currentString, finishDate);
-
-                DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
-                if(id > 0) {
-                    dbHandler.modifyTask(id, task);
-                } else {
-                    dbHandler.addTask(task);
-                }
-                finish();
-            }
+            public void onClick(View v) { createTask(); }
         });
 
         Button deleteButton = findViewById(R.id.deleteButton);
@@ -79,9 +63,7 @@ public class AddActivity extends AppCompatActivity {
         }
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                deleteTask();
-            }
+            public void onClick(View v) { deleteTask(); }
         });
     }
 
@@ -104,5 +86,28 @@ public class AddActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.setTitle("Delete Task");
         alert.show();
+    }
+
+    private void createTask() {
+        int year = datePicker.getYear();
+        int month = datePicker.getMonth();
+        int day = datePicker.getDayOfMonth();
+        String finishDate = String.valueOf(year) + "-" + String.valueOf(month) + "-"
+                + String.valueOf(day);
+
+        Calendar calendar = Calendar.getInstance();
+        String currentString = String.valueOf(calendar.get(Calendar.YEAR)) + "-"
+                + String.valueOf(calendar.get(Calendar.MONTH)) + "-"
+                + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+
+        Task task = new Task(editText.getText().toString(), currentString, finishDate);
+
+        DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
+        if(id > 0) {
+            dbHandler.modifyTask(id, task);
+        } else {
+            dbHandler.addTask(task);
+        }
+        finish();
     }
 }

@@ -26,7 +26,6 @@ public class Task {
         this.finishDate = new GregorianCalendar(Integer.valueOf(tempFinishDate[0]),
                 Integer.valueOf(tempFinishDate[1]) - 1,
                 Integer.valueOf(tempFinishDate[2])).getTime();
-        System.out.println("Dates: " + this.startDate.toString());
     }
 
     public String getTitle() {
@@ -59,47 +58,5 @@ public class Task {
 
     public void setDoneFromString(String isDone) {
         this.isDone = Boolean.parseBoolean(isDone);
-    }
-
-    public static String timeLeft(Date date) {
-        String currentString = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-        String[] tempCurrentDate = currentString.split("-");
-        Date currentDate = new GregorianCalendar(Integer.valueOf(tempCurrentDate[0]),
-                Integer.valueOf(tempCurrentDate[1]) - 1,
-                Integer.valueOf(tempCurrentDate[2])).getTime();
-
-        long different = date.getTime() - currentDate.getTime();
-
-        long secondsInMilli = 1000;
-        long minutesInMilli = secondsInMilli * 60;
-        long hoursInMilli = minutesInMilli * 60;
-        long daysInMilli = hoursInMilli * 24;
-
-        long elapsedDays = different / daysInMilli;
-        different = different % daysInMilli;
-
-        long elapsedHours = different / hoursInMilli;
-        different = different % hoursInMilli;
-
-        long elapsedMinutes = different / minutesInMilli;
-        different = different % minutesInMilli;
-
-        long elapsedSeconds = different / secondsInMilli;
-
-        System.out.printf(
-                "%d days, %d hours, %d minutes, %d seconds%n",
-                elapsedDays, elapsedHours, elapsedMinutes, elapsedSeconds);
-
-        String result = "";
-        if(elapsedDays > 0) {
-            result += String.valueOf(elapsedDays) + "d";
-        } else if (elapsedHours > 0 ) {
-            result += String.valueOf(elapsedHours) + "h";
-        } else if(elapsedMinutes > 0) {
-            result += String.valueOf(elapsedMinutes) + "m";
-        } else {
-            result += "Late";
-        }
-        return result;
     }
 }

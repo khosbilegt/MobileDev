@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:background="@color/task_background"
+                android:background="@drawable/task_rest"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
@@ -65,6 +65,17 @@
                     android:backgroundTint="#FFFFFF"
                     android:gravity="right"
                     android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="right"
+                    android:textAlignment="center" />
+
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView

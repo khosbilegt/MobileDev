@@ -99,6 +99,15 @@
             android:layout_marginBottom="10dp"
             android:theme="@style/ToolBarStyle" />
 
+        <Button
+            android:id="@+id/createButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/task_rest"
+            android:text="Create"
+            android:textColor="@color/white" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -109,8 +118,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#D6D6D6"
-                android:text="Create" />
+                android:background="@drawable/task_rest"
+                android:text="Create"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/deleteButton"
@@ -118,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:background="#FF6767"
+                android:background="@drawable/task_done"
                 android:text="delete" />
 
         </LinearLayout>

@@ -61,7 +61,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         String itemText = list.get(position).getTitle();
         holder.textTitle.setText(itemText);
         holder.textTitle.setTextColor(holder.resources.getColor(R.color.white));
-        holder.textTimeLeft.setText(Task.timeLeft(list.get(position).getFinishDate()));
+        holder.textTimeLeft.setText(DateHelper.timeLeft(list.get(position).getFinishDate()));
 
         int staticPosition = position;
         Task task = list.get(staticPosition);
@@ -71,6 +71,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
             public boolean onLongClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), AddActivity.class);
                 intent.putExtra("id", task.getId());
+                intent.putExtra("title", task.getTitle());
                 ((Activity)holder.itemView.getContext()).startActivityForResult(intent, holder.ADD_CODE);
                 return true;
             }
@@ -91,6 +92,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
                 holder.textTitle.setPaintFlags( holder.textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.textTimeLeft.setPaintFlags( holder.textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.sideView.setBackground(holder.resources.getDrawable(R.drawable.side_rest));
+                MainActivity main = ((MainActivity)holder.itemView.getContext());
+                main.loadData();
             }
         });
 
