@@ -92,6 +92,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
                 holder.textTitle.setPaintFlags( holder.textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.textTimeLeft.setPaintFlags( holder.textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.sideView.setBackground(holder.resources.getDrawable(R.drawable.side_rest));
+
                 MainActivity main = ((MainActivity)holder.itemView.getContext());
                 main.loadData();
             }

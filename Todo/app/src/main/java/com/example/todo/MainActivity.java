@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadData() {
         DatabaseHelper dbHandler = new DatabaseHelper(MainActivity.this);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         List<Task> list = dbHandler.getTasks();
         List<Task> relevantList = new ArrayList<Task>();
         for(int i = 0; i < list.size(); i++) {
@@ -101,9 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         TaskAdapter recyclerAdapter = new TaskAdapter(relevantList);
-        recyclerAdapter.notifyDataSetChanged();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setAdapter(recyclerAdapter);
