@@ -105,4 +105,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         wordCursor.close();
         return tasks;
     }
+
+    public void deleteTask(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, "id=?", new String[]{String.valueOf(id)});
+        db.close();
+    }
 }

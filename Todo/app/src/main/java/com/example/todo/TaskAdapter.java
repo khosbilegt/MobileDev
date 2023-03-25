@@ -28,8 +28,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         CheckBox checkBox;
         TextView textTitle;
         TextView textTimeLeft;
-        View topView;
-        View bottomView;
         private static final int ADD_CODE = 0;
 
         public ViewHolder(View itemView) {
@@ -39,8 +37,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
             checkBox = itemView.findViewById(R.id.taskIsDone);
             textTitle = itemView.findViewById(R.id.taskTitle);
             textTimeLeft = itemView.findViewById(R.id.taskTimeLeft);
-            topView = itemView.findViewById(R.id.topColor);
-            bottomView = itemView.findViewById(R.id.bottomColor);
         }
     }
 
@@ -88,14 +84,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
                 if(isChecked) {
                     holder.textTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                     holder.textTimeLeft.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                    holder.topView.setBackgroundColor(Color.RED);
-                    holder.bottomView.setBackgroundColor(Color.RED);
+                    holder.layout.setBackground(holder.resources.getDrawable(R.drawable.done_square));
+                    holder.layout.setBackgroundColor(Color.parseColor("#D8F8B3"));
                     return;
                 }
                 holder.textTitle.setPaintFlags( holder.textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.textTimeLeft.setPaintFlags( holder.textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
-                holder.topView.setBackgroundColor(Color.BLACK);
-                holder.bottomView.setBackgroundColor(Color.BLACK);
+                holder.layout.setBackground(holder.resources.getDrawable(R.drawable.inactive_square));
             }
         });
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,21 @@ public class AddActivity extends AppCompatActivity {
                 } else {
                     dbHandler.addTask(task);
                 }
+                finish();
+            }
+        });
+
+        Button deleteButton = findViewById(R.id.deleteButton);
+        if(id < 0) {
+            deleteButton.setBackgroundColor(Color.parseColor("#D6D6D6"));
+            deleteButton.setClickable(false);
+            return;
+        }
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
+                dbHandler.deleteTask(id);
                 finish();
             }
         });
