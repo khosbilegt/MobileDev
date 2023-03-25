@@ -2,9 +2,13 @@ package com.example.todo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         handleDateSpinner();
         loadCalendar();
         loadData();
+        activateAlarm();
         Calendar calendar = Calendar.getInstance();
         activeDate = calendar.getTime();
     }
@@ -62,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         List<Task> relevantList = new ArrayList<Task>();
         for(int i = 0; i < list.size(); i++) {
             Task task = list.get(i);
-            System.out.println("Relevant Date: " + task.getFinishDate().toString());
             if(seeDone) {
                 if(onlyDate) {
                     Calendar calendar = Calendar.getInstance();
@@ -182,6 +186,18 @@ public class MainActivity extends AppCompatActivity {
         activeDate = date;
         System.out.print("Changed Date: " + date.toString());
         loadData();
+    }
+
+    public void activateAlarm() {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 11);
+        calendar.set(Calendar.MINUTE, 11);
+        Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
+                0, intent, PendingIntent.FLAG_IMMUTABLE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     @Override
