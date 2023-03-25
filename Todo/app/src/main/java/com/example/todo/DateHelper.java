@@ -62,7 +62,7 @@ public class DateHelper {
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(Calendar.MONTH, 2);
+        //calendar.add(Calendar.MONTH, 2);
         long different = calendar.getTime().getTime() - currentDate.getTime();
 
         long secondsInMilli = 1000;

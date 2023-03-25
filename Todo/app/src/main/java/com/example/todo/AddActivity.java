@@ -57,7 +57,7 @@ public class AddActivity extends AppCompatActivity {
 
         Button deleteButton = findViewById(R.id.deleteButton);
         if(id < 0) {
-            deleteButton.setBackgroundColor(Color.parseColor("#D6D6D6"));
+            deleteButton.setBackground(getResources().getDrawable(R.drawable.inactive_square));
             deleteButton.setClickable(false);
             return;
         }
@@ -90,7 +90,7 @@ public class AddActivity extends AppCompatActivity {
 
     private void createTask() {
         int year = datePicker.getYear();
-        int month = datePicker.getMonth();
+        int month = datePicker.getMonth() + 1;
         int day = datePicker.getDayOfMonth();
         String finishDate = String.valueOf(year) + "-" + String.valueOf(month) + "-"
                 + String.valueOf(day);

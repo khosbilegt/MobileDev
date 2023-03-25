@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean seeDone = false;
     private boolean seeNotDone = false;
     private boolean onlyDate = false;
+    private Date activeDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         handleDateSpinner();
         loadCalendar();
         loadData();
+        Calendar calendar = Calendar.getInstance();
+        activeDate = calendar.getTime();
     }
 
     public void loadCalendar() {
@@ -59,13 +62,15 @@ public class MainActivity extends AppCompatActivity {
         List<Task> relevantList = new ArrayList<Task>();
         for(int i = 0; i < list.size(); i++) {
             Task task = list.get(i);
+            System.out.println("Relevant Date: " + task.getFinishDate().toString());
             if(seeDone) {
                 if(onlyDate) {
                     Calendar calendar = Calendar.getInstance();
-                    int today = calendar.get(Calendar.DAY_OF_MONTH);
+                    calendar.setTime(activeDate);
+                    int chosenDay = calendar.get(Calendar.DAY_OF_MONTH);
                     calendar.setTime(task.getFinishDate());
                     int finishDay = calendar.get(Calendar.DAY_OF_MONTH);
-                    if(task.isDone() && finishDay == today) {
+                    if(task.isDone() && finishDay == chosenDay) {
                         relevantList.add(task);
                     }
                 } else {
@@ -77,10 +82,11 @@ public class MainActivity extends AppCompatActivity {
             if(seeNotDone) {
                 if(onlyDate) {
                     Calendar calendar = Calendar.getInstance();
-                    int today = calendar.get(Calendar.DAY_OF_MONTH);
+                    calendar.setTime(activeDate);
+                    int chosenDay = calendar.get(Calendar.DAY_OF_MONTH);
                     calendar.setTime(task.getFinishDate());
                     int finishDay = calendar.get(Calendar.DAY_OF_MONTH);
-                    if(task.isDone() && finishDay == today) {
+                    if(!task.isDone() && finishDay == chosenDay) {
                         relevantList.add(task);
                     }
                 } else {
@@ -93,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         TaskAdapter recyclerAdapter = new TaskAdapter(relevantList);
+        recyclerAdapter.notifyDataSetChanged();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setAdapter(recyclerAdapter);
@@ -168,6 +175,12 @@ public class MainActivity extends AppCompatActivity {
         });
         int selection = sharedPref.getInt("date", 0);
         spinner.setSelection(selection);
+        loadData();
+    }
+
+    public void changeDate(Date date) {
+        activeDate = date;
+        System.out.print("Changed Date: " + date.toString());
         loadData();
     }
 

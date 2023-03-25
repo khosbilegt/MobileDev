@@ -57,7 +57,6 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CalendarAdapter.ViewHolder holder, int position) {
-        int staticPosition = position;
         handleColors(holder, position);
         handleText(holder, position);
     }
@@ -84,6 +83,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
                                 activeList.set(i, false);
                             }
                         }
+                        MainActivity main = ((MainActivity)holder.itemView.getContext());
+                        main.changeDate(list.get(position));
                         notifyDataSetChanged();
                     }
                 }
