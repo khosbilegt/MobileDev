@@ -1,24 +1,15 @@
 package com.example.todo;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -74,7 +65,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
     private void handleColors(@NonNull CalendarAdapter.ViewHolder holder, int position) {
         int staticPosition = position;
         if(activeList.get(staticPosition)) {
-            holder.layout.setBackground(holder.resources.getDrawable(R.drawable.done_square));
+            holder.layout.setBackground(holder.resources.getDrawable(R.drawable.side_late));
             holder.dayOfMonthText.setTextColor(holder.resources.getColor(R.color.active_text));
             holder.dayOfWeekText.setTextColor(holder.resources.getColor(R.color.active_text));
             return;

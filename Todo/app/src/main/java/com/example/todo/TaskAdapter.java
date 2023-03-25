@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +26,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         CheckBox checkBox;
         TextView textTitle;
         TextView textTimeLeft;
+        Button sideView;
         private static final int ADD_CODE = 0;
 
         public ViewHolder(View itemView) {
@@ -37,6 +36,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
             checkBox = itemView.findViewById(R.id.taskIsDone);
             textTitle = itemView.findViewById(R.id.taskTitle);
             textTimeLeft = itemView.findViewById(R.id.taskTimeLeft);
+            sideView = itemView.findViewById(R.id.sideView);
         }
     }
 
@@ -60,6 +60,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
         String itemText = list.get(position).getTitle();
         holder.textTitle.setText(itemText);
+        holder.textTitle.setTextColor(holder.resources.getColor(R.color.white));
         holder.textTimeLeft.setText(Task.timeLeft(list.get(position).getFinishDate()));
 
         int staticPosition = position;
@@ -84,13 +85,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
                 if(isChecked) {
                     holder.textTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                     holder.textTimeLeft.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                    holder.layout.setBackground(holder.resources.getDrawable(R.drawable.done_square));
-                    holder.layout.setBackgroundColor(Color.parseColor("#D8F8B3"));
+                    holder.sideView.setBackground(holder.resources.getDrawable(R.drawable.side_done));
                     return;
                 }
                 holder.textTitle.setPaintFlags( holder.textTitle.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 holder.textTimeLeft.setPaintFlags( holder.textTimeLeft.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
-                holder.layout.setBackground(holder.resources.getDrawable(R.drawable.inactive_square));
+                holder.sideView.setBackground(holder.resources.getDrawable(R.drawable.side_rest));
             }
         });
 

@@ -3,56 +3,74 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemLayout"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:background="@drawable/inactive_square">
+    android:background="@drawable/task_rest">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/sideView"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/taskIsDone"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5" />
-
-            <TextView
-                android:id="@+id/taskTitle"
-                android:layout_width="500dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="8"
-                android:gravity="center_vertical"
-                android:text="TextView"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/side_rest" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="8.5"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/taskTimeLeft"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:padding="3dp"
-                android:text="TextView" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/taskTitle"
+                    android:layout_width="500dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="8"
+                    android:gravity="center_vertical"
+                    android:text="TextView"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    tools:textColor="@color/white" />
+
+                <CheckBox
+                    android:id="@+id/taskIsDone"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:buttonTint="#FFFFFF"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8.5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/taskTimeLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="3dp"
+                    android:text="TextView"
+                    android:textColor="#8B89BA" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
