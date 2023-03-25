@@ -19,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +35,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         handleSpinner();
+        loadCalendar();
         loadData();
+    }
+
+    public void loadCalendar() {
+        Calendar calendar = Calendar.getInstance();
+        Date today = calendar.getTime();
+        List<Date> dates = DateHelper.getNextMonth(today);
+        RecyclerView recyclerView = findViewById(R.id.calendarRecycler);
+        CalendarAdapter recyclerAdapter = new CalendarAdapter(dates);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerView.setAdapter(recyclerAdapter);
+        recyclerView.setLayoutManager(manager);
     }
 
     public void loadData() {

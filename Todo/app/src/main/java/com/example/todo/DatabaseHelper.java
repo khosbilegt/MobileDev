@@ -99,7 +99,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 task.setDoneFromString(wordCursor.getString(4));
                 task.setId(wordCursor.getInt(0));
                 tasks.add(task);
-                System.out.println(wordCursor.getString(4));
             } while (wordCursor.moveToNext());
         }
         wordCursor.close();
