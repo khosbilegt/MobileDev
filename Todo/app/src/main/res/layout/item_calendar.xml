@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendarLayout"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/cal_active"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:textAlignment="center">
+
+    <TextView
+        android:id="@+id/dayOfMonthText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dayOfWeekText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:text="Sun"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+</LinearLayout>
