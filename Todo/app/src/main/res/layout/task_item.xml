@@ -42,10 +42,9 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:text="TextView"
-                    android:textColor="#000000"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:layout_marginTop="10dp"
-                    tools:textColor="@color/white" />
+                    tools:layout_marginTop="10dp" />
 
             </LinearLayout>
 

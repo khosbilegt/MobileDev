@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
         options.add("Done");;
         options.add("Not Done");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, options);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                R.layout.item_spinner, options);
+        arrayAdapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         Spinner spinner = findViewById(R.id.spinner);
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         spinner.setAdapter(arrayAdapter);
@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.add_button:
                 Intent intent = new Intent(MainActivity.this, AddActivity.class);
