@@ -6,11 +6,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:background="@drawable/task_rest">
+    android:background="@drawable/task_rest"
+    android:padding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <Button
@@ -19,7 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/side_rest" />
+            android:background="@drawable/side_rest"
+            tools:layout_marginBottom="15dp"
+            tools:layout_marginTop="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,23 +37,15 @@
 
                 <TextView
                     android:id="@+id/taskTitle"
-                    android:layout_width="500dp"
+                    android:layout_width="250dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="8"
                     android:gravity="center_vertical"
                     android:text="TextView"
                     android:textColor="#000000"
                     android:textSize="20sp"
+                    tools:layout_marginTop="10dp"
                     tools:textColor="@color/white" />
-
-                <CheckBox
-                    android:id="@+id/taskIsDone"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:buttonTint="#FFFFFF"
-                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -63,7 +59,7 @@
                     android:id="@+id/taskTimeLeft"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="8"
+                    android:layout_marginLeft="10dp"
                     android:padding="3dp"
                     android:text="TextView"
                     android:textColor="#8B89BA" />
@@ -71,6 +67,15 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/taskIsDone"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:buttonTint="#FFFFFF"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

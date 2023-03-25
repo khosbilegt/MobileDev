@@ -65,7 +65,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
     private void handleColors(@NonNull CalendarAdapter.ViewHolder holder, int position) {
         int staticPosition = position;
         if(activeList.get(staticPosition)) {
-            holder.layout.setBackground(holder.resources.getDrawable(R.drawable.side_late));
+            holder.layout.setBackground(holder.resources.getDrawable(R.drawable.cal_active));
             holder.dayOfMonthText.setTextColor(holder.resources.getColor(R.color.active_text));
             holder.dayOfWeekText.setTextColor(holder.resources.getColor(R.color.active_text));
             return;

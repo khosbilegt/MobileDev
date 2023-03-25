@@ -1,8 +1,10 @@
 package com.example.todo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -78,10 +80,29 @@ public class AddActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
-                dbHandler.deleteTask(id);
-                finish();
+                deleteTask();
             }
         });
+    }
+
+    private void deleteTask() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to delete this task ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int idx) {
+                        DatabaseHelper dbHandler = new DatabaseHelper(AddActivity.this);
+                        dbHandler.deleteTask(id);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.setTitle("Delete Task");
+        alert.show();
     }
 }
