@@ -1,0 +1,96 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/026e7e320dc7277cb9bf6c69d9d07ab3/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/c1c2f6118d587ae1be9de0676c61a7bf/transformed/support-fragment-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/109ba69134be6b1e0d07b58c99822e72/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/f4bd80791711e50012c332d74a1ae5bb/transformed/support-core-ui-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/957ad3a25ab051e67e4d1cb20c250629/transformed/support-core-utils-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b90500d167807224a7be97fc0d98bfb3/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b959b2306738971776389712682d9f56/transformed/support-compat-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/e600b339a805afd2d52b4b8702d958a0/transformed/livedata-core-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ac0db830fa9cc3f17cd910726b1b0ffd/transformed/viewmodel-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/b37b52ee7fea91fc5cddf3db5dcf27f4/transformed/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ee07c44ec04ccabd991f3b4dbe462a56/transformed/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+	package
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:18:5-45
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:1-34:12
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:17:11-69
+application
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:20:5-32:19
+	android:supportsRtl
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:23:9-41
+	android:icon
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:22:9-43
+	android:allowBackup
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:21:9-35
+	android:theme
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:25:9-40
+activity#com.example.android.SimpleCalc.MainActivity
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:26:9-31:20
+	android:name
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:26:19-77
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/026e7e320dc7277cb9bf6c69d9d07ab3/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/026e7e320dc7277cb9bf6c69d9d07ab3/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/c1c2f6118d587ae1be9de0676c61a7bf/transformed/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/c1c2f6118d587ae1be9de0676c61a7bf/transformed/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/109ba69134be6b1e0d07b58c99822e72/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/109ba69134be6b1e0d07b58c99822e72/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/f4bd80791711e50012c332d74a1ae5bb/transformed/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/f4bd80791711e50012c332d74a1ae5bb/transformed/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/957ad3a25ab051e67e4d1cb20c250629/transformed/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/957ad3a25ab051e67e4d1cb20c250629/transformed/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b90500d167807224a7be97fc0d98bfb3/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b90500d167807224a7be97fc0d98bfb3/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b959b2306738971776389712682d9f56/transformed/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/xocoo/.gradle/caches/transforms-3/b959b2306738971776389712682d9f56/transformed/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/e600b339a805afd2d52b4b8702d958a0/transformed/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/e600b339a805afd2d52b4b8702d958a0/transformed/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ac0db830fa9cc3f17cd910726b1b0ffd/transformed/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ac0db830fa9cc3f17cd910726b1b0ffd/transformed/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/b37b52ee7fea91fc5cddf3db5dcf27f4/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/b37b52ee7fea91fc5cddf3db5dcf27f4/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ee07c44ec04ccabd991f3b4dbe462a56/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/xocoo/.gradle/caches/transforms-3/ee07c44ec04ccabd991f3b4dbe462a56/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xocoo/Desktop/Projects/SimpleCalc/app/src/main/AndroidManifest.xml

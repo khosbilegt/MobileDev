@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 (Response.Listener<JSONObject>) response -> {
                     JsonHelper helper = new JsonHelper();
                     weatherList = helper.parseWeather(response);
+                    System.out.println(response);
                     HourlyFragment hourly = (HourlyFragment) getSupportFragmentManager().findFragmentByTag("hourlyFragment");
                     hourly.setView(weatherList);
                     DailyFragment daily = (DailyFragment) getSupportFragmentManager().findFragmentByTag("dailyFragment");

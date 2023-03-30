@@ -1,0 +1,4 @@
+#Fri Feb 17 16:20:00 ULAT 2023
+base.0=/Users/xocoo/Desktop/Projects/android-fundamentals-starter-apps-v2/SimpleCalc/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

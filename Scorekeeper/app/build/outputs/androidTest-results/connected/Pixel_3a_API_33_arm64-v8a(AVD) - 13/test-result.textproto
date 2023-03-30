@@ -1,0 +1,68 @@
+# 2023-03-10T07:02:11.683Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "ScorePlusMinusTest"
+    test_package: "com.example.android.scorekeeper"
+    test_method: "scorePlusMinusTest"
+    start_time {
+      seconds: 1678431723
+      nanos: 261000000
+    }
+    end_time {
+      seconds: 1678431728
+      nanos: 437000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/xocoo/Desktop/Projects/Scorekeeper/app/build/outputs/androidTest-results/connected/Pixel_3a_API_33_arm64-v8a(AVD) - 13/logcat-com.example.android.scorekeeper.ScorePlusMinusTest-scorePlusMinusTest.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/xocoo/Desktop/Projects/Scorekeeper/app/build/outputs/androidTest-results/connected/Pixel_3a_API_33_arm64-v8a(AVD) - 13/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/xocoo/Desktop/Projects/Scorekeeper/app/build/outputs/androidTest-results/connected/Pixel_3a_API_33_arm64-v8a(AVD) - 13/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/xocoo/Desktop/Projects/Scorekeeper/app/build/outputs/androidTest-results/connected/Pixel_3a_API_33_arm64-v8a(AVD) - 13/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/Users/xocoo/Desktop/Projects/Scorekeeper/app/build/outputs/androidTest-results/connected/Pixel_3a_API_33_arm64-v8a(AVD) - 13/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

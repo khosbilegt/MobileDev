@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.example.android.scorekeeper.ScorePlusMinusTest" tests="1" failures="0" errors="0" skipped="0" time="8.342" timestamp="2023-03-10T07:02:11" hostname="localhost">
+  <properties>
+    <property name="device" value="Pixel_3a_API_33_arm64-v8a(AVD) - 13" />
+    <property name="flavor" value="" />
+    <property name="project" value="app" />
+  </properties>
+  <testcase name="scorePlusMinusTest" classname="com.example.android.scorekeeper.ScorePlusMinusTest" time="5.162" />
+</testsuite>

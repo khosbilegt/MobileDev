@@ -1,0 +1,180 @@
+03-10 15:02:01.224  5206  5235 I TestRunner: started: scorePlusMinusTest(com.example.android.scorekeeper.ScorePlusMinusTest)
+03-10 15:02:01.236  5206  5206 I MonitoringInstr: Activities that are still in CREATED to STOPPED: 0
+03-10 15:02:01.251  5206  5235 W ActivityTestRule: getActivityIntent() returned null using default: Intent(Intent.ACTION_MAIN)
+03-10 15:02:01.253  5206  5235 I ActivityTestRule: Launching activity: ComponentInfo{com.example.android.scorekeeper/com.example.android.scorekeeper.MainActivity}
+03-10 15:02:01.290  5206  5238 D MonitoringInstr: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+03-10 15:02:01.304  1945  3580 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=a6e615a2-5303-45ce-8392-9f7e6a9f9f4b, tags={ com.google.android.libraries.mdi.download.workmanager.workers.PeriodicWorker, MDD.CELLULAR.CHARGING.PERIODIC.TASK } ]
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: Call failed: get_actions
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: java.util.concurrent.TimeoutException: Waited 5000 milliseconds (plus 672710 nanoseconds delay) for klo@c577298[status=PENDING, setFuture=[kkv@fb64af1[status=PENDING, info=[inputFuture=[klp@2d986d6[status=PENDING, info=[inputFuture=[klp@d37cd57[status=PENDING, info=[inputFuture=[kml@99d2044[status=PENDING, info=[futures=[klp@53a52d[status=PENDING, info=[inputFuture=[klp@dbf3a62[status=PENDING, info=[inputFuture=[knk@801e7f3[status=PENDING, info=[delegate=[kop@66dfcb0[status=PENDING, setFuture=[klp@ff26729[status=PENDING, info=[inputFuture=[klo@85a9aae[status=PENDING, info=[inputFuture=[knk@a49104f[status=PENDING, info=[delegate=[kop@2e33dc[status=PENDING, setFuture=[klo@fa14ce5[status=PENDING, setFuture=[klp@b39b3ba[status=PENDING, info=[inputFuture=[klp@830626b[status=PENDING, info=[inputFuture=[klo@458b1c8[status=PENDING, info=[function=[propagating=[btm@89ed261]]]]], function=[propagating=[bzu@7bf5186]]]]], function=[propagating=[bzu@af0ba47]]]]]]]]]]]], function=[propagating=[bpl@b2b2274]]]]], function=[propagating=[bpi@1b5f590]]]]]]]]]], function=[propagating=[bow@f95339d]]]]], function=[propagating=[cpi@af0012]]]]]]]], function=[propagating=[cwt@45086af]]]]], function=[propagating=[bpm@c74b3e3]]]]], exceptionType=[class java.lang.Throwable], fallback=[propagating=[bpi@2a69a45]]]]]]
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at klm.get(PG:47)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at knc.get(PG:2)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.i(PG:1)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.call(PG:9)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at android.content.ContentProvider.call(ContentProvider.java:2511)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:525)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:295)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at android.os.Binder.execTransactInternal(Binder.java:1280)
+03-10 15:02:01.534  1086  1126 W WellbeingSettingsProvid: 	at android.os.Binder.execTransact(Binder.java:1244)
+03-10 15:02:02.028   779   989 D SplashScreenView: Build android.window.SplashScreenView{8fc7939 V.E...... ......ID 0,0-0,0}
+03-10 15:02:02.028   779   989 D SplashScreenView: Icon: view: null drawable: null size: 0
+03-10 15:02:02.028   779   989 D SplashScreenView: Branding: view: android.view.View{b852b7e G.ED..... ......I. 0,0-0,0 #10204db android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+03-10 15:02:02.080   541   541 W system_server: Long monitor contention with owner binder:541_1C (2181) at android.window.TaskSnapshot com.android.server.wm.TaskSnapshotCache.getSnapshot(int, int, boolean, boolean)(TaskSnapshotCache.java:68) waiters=0 in android.content.res.CompatibilityInfo com.android.server.wm.ActivityTaskManagerService$LocalService.compatibilityInfoForPackage(android.content.pm.ApplicationInfo) for 426ms
+03-10 15:02:02.088   541   566 W system_server: Long monitor contention with owner binder:541_1C (2181) at android.window.TaskSnapshot com.android.server.wm.TaskSnapshotCache.getSnapshot(int, int, boolean, boolean)(TaskSnapshotCache.java:68) waiters=2 in void com.android.server.wm.WindowAnimator.lambda$new$1(long) for 415ms
+03-10 15:02:02.103   541  1790 W system_server: Long monitor contention with owner binder:541_1C (2181) at android.window.TaskSnapshot com.android.server.wm.TaskSnapshotCache.getSnapshot(int, int, boolean, boolean)(TaskSnapshotCache.java:68) waiters=3 in void com.android.server.wm.ActivityClientController.activityTopResumedStateLost() for 348ms
+03-10 15:02:02.183   408   408 I BpBinder: onLastStrongRef automatically unlinking death recipients: <uncached descriptor>
+03-10 15:02:02.245   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f5dc4000 0x1f66ec000]
+03-10 15:02:02.307  1087  1545 D EGL_emulation: app_time_stats: avg=1168.65ms min=1.47ms max=18464.42ms count=16
+03-10 15:02:02.331   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f66ec000 0x1f7014000]
+03-10 15:02:02.346   779   992 W Parcel  : Expecting binder but got null!
+03-10 15:02:02.364   541  1281 I WifiService: startScan uid=1000
+03-10 15:02:02.369   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f4928000 0x1f5250000]
+03-10 15:02:02.520   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d377cf0
+03-10 15:02:02.526   541  1632 W system_server: Long monitor contention with owner main (541) at int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12676) waiters=0 in boolean com.android.server.am.ActivityManagerService.unbindService(android.app.IServiceConnection) for 891ms
+03-10 15:02:02.528   541   565 W system_server: Long monitor contention with owner main (541) at int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12676) waiters=1 in void com.android.server.am.ProcessRecord.onStartActivity(int, boolean, java.lang.String, long) for 348ms
+03-10 15:02:02.540   541  1792 W system_server: Long monitor contention with owner main (541) at int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12676) waiters=2 in int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int) for 272ms
+03-10 15:02:02.686   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d377b70
+03-10 15:02:02.687   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d3787d0
+03-10 15:02:02.708   541  2150 W system_server: Long monitor contention with owner main (541) at boolean com.android.server.job.JobServiceContext.executeRunnableJob(com.android.server.job.controllers.JobStatus, int)(JobServiceContext.java:382) waiters=0 in int com.android.server.job.JobSchedulerService.scheduleAsPackage(android.app.job.JobInfo, android.app.job.JobWorkItem, int, java.lang.String, int, java.lang.String) for 1.147s
+03-10 15:02:02.718   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d378710
+03-10 15:02:02.798  5206  5249 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+03-10 15:02:02.801  5206  5249 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+03-10 15:02:02.812  5206  5249 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+03-10 15:02:02.976   779   992 D EGL_emulation: app_time_stats: avg=3859.36ms min=1.56ms max=33961.25ms count=9
+03-10 15:02:03.036   329   329 W Zygote  : forkRepeatedly terminated due to non-simple command
+03-10 15:02:03.036   329   329 D Zygote  : mbuffer starts with 15, nice name is com.android.chrome_zygote, mEnd = 417, mNext = 198, mLinesLeft = 6, mFd = 5
+03-10 15:02:03.046  5206  5206 D LifecycleMonitor: Lifecycle status change: com.example.android.scorekeeper.MainActivity@ab4d95 in: PRE_ON_CREATE
+03-10 15:02:03.074  1451  1451 I GsaVoiceInteractionSrv: Handling ACTION_STOP_HOTWORD
+03-10 15:02:03.142   329   329 D Zygote  : Forked child process 5255
+03-10 15:02:03.162   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.175  5255  5255 I libc    : SetHeapTaggingLevel: tag level set to 0
+03-10 15:02:03.219   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.270   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.324   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.360   541  1536 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+03-10 15:02:03.372  1201  2912 W .gms.persistent: Long monitor contention with owner GoogleApiHandler (1315) at void vbt.h(java.lang.String, uxe, int)(:com.google.android.gms@221821044@22.18.21 (190400-453244992):19) waiters=0 in void vbt.i() for 2.060s
+03-10 15:02:03.374   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.402  1945  3583 E MDD     : DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.apps.messaging/files/datadownload/shared/public/datadownloadfile_1675316199879
+03-10 15:02:03.402  1945  4901 E MDD     : DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.apps.messaging/files/datadownload/shared/public/datadownloadfile_1675316199881
+03-10 15:02:03.424   541   574 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+03-10 15:02:03.441   328   734 I netd    : tetherGetStats() -> {[]} <8.86ms>
+03-10 15:02:03.558   541  2150 W system_server: Long monitor contention with owner android.bg (572) at void com.android.server.accessibility.AccessibilityManagerService$1.onSomePackagesChanged()(AccessibilityManagerService.java:597) waiters=0 in long com.android.server.accessibility.AccessibilityManagerService.addClient(android.view.accessibility.IAccessibilityManagerClient, int) for 211ms
+03-10 15:02:03.747   541   574 I AppZygote: Starting application preload.
+03-10 15:02:03.832  1945  3580 D bjon    : Starting download: https://www.gstatic.com/webref-ondevice/am/20230212/a8bc0b62c54ba16be90c291eb49eb56949d1fd87.zip
+03-10 15:02:03.832  1945  3580 V bjon    : Is http uri, downloading (uri: https://www.gstatic.com/webref-ondevice/am/20230212/a8bc0b62c54ba16be90c291eb49eb56949d1fd87.zip)
+03-10 15:02:03.837  5255  5255 I AppZygoteInit: Beginning application preload for com.android.chrome
+03-10 15:02:03.992   779   992 D EGL_emulation: app_time_stats: avg=6.83ms min=1.05ms max=38.90ms count=44
+03-10 15:02:04.011   328   734 I netd    : bandwidthSetGlobalAlert(2097152) <0.63ms>
+03-10 15:02:04.029  5206  5206 W oid.scorekeeper: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (unsupported, reflection, allowed)
+03-10 15:02:04.030  5206  5206 W oid.scorekeeper: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+03-10 15:02:04.044  5206  5206 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10169; state: DISABLED
+03-10 15:02:04.045  5206  5206 D CompatibilityChangeReporter: Compat change id reported: 37756858; UID 10169; state: DISABLED
+03-10 15:02:04.070   186   186 I lowmemorykiller: Kill 'com.android.imsserviceentitlement' (3214), uid 10104, oom_score_adj 999 to free 47112kB rss, 0kB swap; reason: low watermark is breached and thrashing (404%)
+03-10 15:02:04.077  5206  5206 D LifecycleMonitor: Lifecycle status change: com.example.android.scorekeeper.MainActivity@ab4d95 in: CREATED
+03-10 15:02:04.082  5206  5206 D LifecycleMonitor: Lifecycle status change: com.example.android.scorekeeper.MainActivity@ab4d95 in: STARTED
+03-10 15:02:04.095   329   329 I Zygote  : Process 3214 exited due to signal 9 (Killed)
+03-10 15:02:04.098  5206  5206 D LifecycleMonitor: Lifecycle status change: com.example.android.scorekeeper.MainActivity@ab4d95 in: RESUMED
+03-10 15:02:04.176  5255  5255 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~30qVMlqvvPcITahx2aLsJw==/com.google.android.trichromelibrary_506007134-YrjE-qzcAkjykU7zXojHdw==/TrichromeLibrary.apk. target_sdk_version=33, uses_libraries=ALL, library_path=/data/app/~~qrYKVxLW2xYdo313JoHCdQ==/com.android.chrome-jZ4XHSCd03jO9U6QlCnFOg==/lib/arm64:/data/app/~~qrYKVxLW2xYdo313JoHCdQ==/com.android.chrome-jZ4XHSCd03jO9U6QlCnFOg==/Chrome.apk!/lib/arm64-v8a:/data/app/~~30qVMlqvvPcITahx2aLsJw==/com.google.android.trichromelibrary_506007134-YrjE-qzcAkjykU7zXojHdw==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+03-10 15:02:04.203  1945  3581 I Bugle   : CountryCodeDetector: updateMainDeviceCountry from default subscription network country. detected country: us
+03-10 15:02:04.218   541   575 I libprocessgroup: Successfully killed process cgroup uid 10104 pid 3214 in 0ms
+03-10 15:02:04.309  5255  5255 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~qrYKVxLW2xYdo313JoHCdQ==/com.android.chrome-jZ4XHSCd03jO9U6QlCnFOg==/Chrome.apk. target_sdk_version=33, uses_libraries=, library_path=/data/app/~~qrYKVxLW2xYdo313JoHCdQ==/com.android.chrome-jZ4XHSCd03jO9U6QlCnFOg==/lib/arm64:/data/app/~~qrYKVxLW2xYdo313JoHCdQ==/com.android.chrome-jZ4XHSCd03jO9U6QlCnFOg==/Chrome.apk!/lib/arm64-v8a:/data/app/~~30qVMlqvvPcITahx2aLsJw==/com.google.android.trichromelibrary_506007134-YrjE-qzcAkjykU7zXojHdw==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+03-10 15:02:04.341  5206  5247 D HostConnection: createUnique: call
+03-10 15:02:04.343  5206  5247 D HostConnection: HostConnection::get() New Host Connection established 0x6fd25b6d50, tid 5247
+03-10 15:02:04.353   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d3785f0
+03-10 15:02:04.353   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d3772d0
+03-10 15:02:04.389  5255  5255 I cr_ZygotePreload: Loaded Zygote. version=103.0.5060.71 minSdkVersion=29 isBundle=true
+03-10 15:02:04.390  5255  5255 I cr_LibraryLoader: Using ModernLinker
+03-10 15:02:04.393  5206  5247 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+03-10 15:02:04.405  1201  4302 W ChimeraUtils: Module com.google.android.gms.nearby_en has empty metadata display_name_string_id
+03-10 15:02:04.422   779   992 D EGL_emulation: app_time_stats: avg=3645.04ms min=3645.04ms max=3645.04ms count=1
+03-10 15:02:04.423  5255  5255 I cr_LibraryLoader: Loading monochrome_64
+03-10 15:02:04.425  5255  5255 I cr_ModernLinker: loadLibraryImplLocked: monochrome_64, relroMode=1
+03-10 15:02:04.426  5206  5247 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+03-10 15:02:04.430  5206  5247 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+03-10 15:02:04.432  5206  5247 D EGL_emulation: eglCreateContext: 0x6fd25b6390: maj 3 min 0 rcv 3
+03-10 15:02:04.454  5206  5247 D EGL_emulation: eglMakeCurrent: 0x6fd25b6390: ver 3 0 (tinfo 0x71f0bf2080) (first time)
+03-10 15:02:04.475   541   553 I system_server: Background young concurrent copying GC freed 520423(22MB) AllocSpace objects, 20(732KB) LOS objects, 44% free, 26MB/47MB, paused 16.757ms,651us total 4.208s
+03-10 15:02:04.523  1803  5157 W Icing   : Usage reports not received in time.: java.util.concurrent.TimeoutException: Timed out waiting for Task
+03-10 15:02:04.541   188   188 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+03-10 15:02:04.544  5206  5247 I Gralloc4: mapper 4.x is not supported
+03-10 15:02:04.553  5206  5247 D HostConnection: createUnique: call
+03-10 15:02:04.554  5206  5247 D HostConnection: HostConnection::get() New Host Connection established 0x6fd25b4c50, tid 5247
+03-10 15:02:04.554  5206  5247 D goldfish-address-space: allocate: Ask for block of size 0x100
+03-10 15:02:04.556  5206  5247 D goldfish-address-space: allocate: ioctl allocate returned offset 0x1f3ff8000 size 0x8000
+03-10 15:02:04.561   188   188 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+03-10 15:02:04.562   187   187 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+03-10 15:02:04.562  5206  5247 W Gralloc4: allocator 4.x is not supported
+03-10 15:02:04.563   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f4000000 0x1f4928000]
+03-10 15:02:04.565  5206  5247 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+03-10 15:02:04.577   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f8000000 0x1f8928000]
+03-10 15:02:04.592   328  5266 I resolv  : GetAddrInfoHandler::run: {101 786533 101 983141 10108 0}
+03-10 15:02:04.596   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f9250000 0x1f9b78000]
+03-10 15:02:04.611   328  5269 I resolv  : res_nmkquery: (QUERY, IN, A)
+03-10 15:02:04.612   328  5269 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0xb400006e65a5e8d0
+03-10 15:02:04.613   328  5269 I resolv  : doQuery: rcode=0, ancount=2, return value=79
+03-10 15:02:04.615   328  5268 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+03-10 15:02:04.615   328  5268 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0xb400006e65a5ed30
+03-10 15:02:04.615   328  5268 I resolv  : doQuery: rcode=0, ancount=2, return value=91
+03-10 15:02:04.723  5206  5247 W Parcel  : Expecting binder but got null!
+03-10 15:02:04.787   541   574 I AppZygote: Application preload done.
+03-10 15:02:04.799   541   562 W ziparchive: Unable to open '/data/app/~~QU6_6cvhbtYhPZp9S9jMmg==/com.example.android.scorekeeper-GyyBJM9cBZqQNhWyF-mC5g==/base.dm': No such file or directory
+03-10 15:02:04.803  5255  5255 I AppZygoteInit: Application preload done
+03-10 15:02:04.847   541   562 I ActivityTaskManager: Displayed com.example.android.scorekeeper/.MainActivity: +3s359ms
+03-10 15:02:05.112  5206  5206 I Choreographer: Skipped 50 frames!  The application may be doing too much work on its main thread.
+03-10 15:02:05.124   541  1788 W InputManager-JNI: Input channel object 'cbf3498 Splash Screen com.example.android.scorekeeper (client)' was disposed without first being removed with the input manager!
+03-10 15:02:05.197   779   992 D EGL_emulation: app_time_stats: avg=25.40ms min=1.07ms max=531.11ms count=29
+03-10 15:02:05.219  5206  5246 I OpenGLRenderer: Davey! duration=929ms; Flags=0, FrameTimelineVsyncId=20138, IntendedVsync=132146885250, Vsync=132980218550, InputEventId=0, HandleInputStart=132993319977, AnimationStart=132993321561, PerformTraversalsStart=132995102144, DrawStart=133040486144, FrameDeadline=132630218564, FrameInterval=132992222561, FrameStartTime=16666666, SyncQueued=133042935519, SyncStart=133042961352, IssueDrawCommandsStart=133043085186, SwapBuffers=133071111019, FrameCompleted=133076708519, DequeueBufferDuration=3541, QueueBufferDuration=588292, GpuCompleted=133076683352, SwapBuffersCompleted=133076708519, DisplayPresentTime=-5476376670141153280, CommandSubmissionCompleted=133071111019,
+03-10 15:02:05.286   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d378530
+03-10 15:02:05.287   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d377450
+03-10 15:02:05.288   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d3791f0
+03-10 15:02:05.288   408   497 W TransactionTracing: Could not find layer handle 0xb400007d3d3791f0
+03-10 15:02:05.289  1426  1426 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3220
+03-10 15:02:05.298  1426  1426 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2114 repeatCheckTimes = 0, unlocked = true
+03-10 15:02:05.298  1426  1426 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1919 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.example.android.scorekeeper fieldId=2131165229 fieldName=null extras=null}, false)
+03-10 15:02:05.299  1426  1426 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2114 repeatCheckTimes = 2, unlocked = true
+03-10 15:02:05.337   786  1010 D BtGatt.ScanManager: uid 10108 isForeground true scanMode 1
+03-10 15:02:05.338   786  1010 D BtGatt.ScanManager: uid 10108 isForeground true scanMode -1
+03-10 15:02:05.338   786  1010 D BtGatt.ScanManager: uid 10108 isForeground true scanMode -1
+03-10 15:02:05.370  5206  5235 D InputManagerEventInjectionStrategy: Creating injection strategy with input manager.
+03-10 15:02:05.376  5206  5235 W oid.scorekeeper: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+03-10 15:02:05.377  5206  5235 W oid.scorekeeper: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+03-10 15:02:05.378  5206  5235 W oid.scorekeeper: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+03-10 15:02:05.379  5206  5235 W oid.scorekeeper: Accessing hidden method Landroid/view/InputEvent;->getSequenceNumber()I (unsupported, reflection, allowed)
+03-10 15:02:05.428  5206  5235 W oid.scorekeeper: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (unsupported, reflection, allowed)
+03-10 15:02:05.432  5206  5206 W oid.scorekeeper: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+03-10 15:02:05.433  5206  5206 W oid.scorekeeper: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+03-10 15:02:05.434  5206  5206 W oid.scorekeeper: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+03-10 15:02:05.439  5206  5206 W oid.scorekeeper: Accessing hidden method Landroid/view/WindowManagerGlobal;->getInstance()Landroid/view/WindowManagerGlobal; (unsupported, reflection, allowed)
+03-10 15:02:05.441  5206  5206 W oid.scorekeeper: Accessing hidden field Landroid/view/WindowManagerGlobal;->mViews:Ljava/util/ArrayList; (unsupported, reflection, allowed)
+03-10 15:02:05.441  5206  5206 W oid.scorekeeper: Accessing hidden field Landroid/view/WindowManagerGlobal;->mParams:Ljava/util/ArrayList; (unsupported, reflection, allowed)
+03-10 15:02:05.449  5206  5206 I ViewInteraction: Performing 'single click' action on view (with id: com.example.android.scorekeeper:id/increaseTeam1 and with content description: is "Plus Button" and Child at position 3 in parent Child at position 0 in parent with class name: is "android.widget.LinearLayout" and is displayed on the screen to the user)
+03-10 15:02:05.515   541  1792 D InputDispatcher: Touch mode switch rejected, caller (pid=0, uid=10169) doesn't own the focused window nor none of the previously interacted window
+03-10 15:02:05.542  5255  5261 I d.chrome_zygote: Background concurrent copying GC freed 209861(8514KB) AllocSpace objects, 2(40KB) LOS objects, 49% free, 3162KB/6324KB, paused 1.500ms,22us total 633.928ms
+03-10 15:02:05.564  5255  5255 I Zygote  : Entering forkRepeatedly native zygote loop
+03-10 15:02:05.678  5255  5255 D Zygote  : Forked child process 5277
+03-10 15:02:05.699  1087  1087 I ActivityThread: Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+03-10 15:02:05.715  5277  5277 E libc    : SetHeapTaggingLevel: re-enabling tagging after it was disabled is not supported
+03-10 15:02:05.765  5206  5206 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=with text: is "1"}' assertion on view (with id: com.example.android.scorekeeper:id/score_1 and with text: is "1" and has parent matching: has parent matching: an instance of android.widget.LinearLayout and is displayed on the screen to the user)
+03-10 15:02:05.767  5206  5206 I ViewInteraction: Performing 'single click' action on view (with id: com.example.android.scorekeeper:id/decreaseTeam1 and with content description: is "Minus Button" and Child at position 1 in parent Child at position 0 in parent with class name: is "android.widget.LinearLayout" and is displayed on the screen to the user)
+03-10 15:02:05.781   428   450 I adbd    : jdwp connection from 5277
+03-10 15:02:05.843   385   525 D AudioFlinger: mixer(0xb400007c6ae6d9a0) throttle end: throttle time(43)
+03-10 15:02:05.863  1451  2531 E HwDetectorWithState: (REDACTED) a: %d
+03-10 15:02:06.006  1087  1087 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=939.0, y[0]=725.0, toolType[0]=TOOL_TYPE_UNKNOWN, buttonState=BUTTON_PRIMARY, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=133347, downTime=133347, deviceId=-1, source=0x1002, displayId=0, eventId=-706739580 }
+03-10 15:02:06.026  5277  5277 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 90000; state: ENABLED
+03-10 15:02:06.047  1087  1087 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=939.0, y[0]=725.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=BUTTON_PRIMARY, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=133395, downTime=133347, deviceId=-1, source=0x1002, displayId=0, eventId=-6928257 }
+03-10 15:02:06.075  5206  5206 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=with text: is "0"}' assertion on view (with id: com.example.android.scorekeeper:id/score_1 and with text: is "0" and has parent matching: has parent matching: an instance of android.widget.LinearLayout and is displayed on the screen to the user)
+03-10 15:02:06.127  5277  5277 D NetworkSecurityConfig: Using Network Security Config from resource 0_resource_name_obfuscated debugBuild: false
+03-10 15:02:06.132  5277  5277 D NetworkSecurityConfig: Using Network Security Config from resource 0_resource_name_obfuscated debugBuild: false
+03-10 15:02:06.141  5277  5277 I cr_SplitCompatApp: Launched version=103.0.5060.71 minSdkVersion=29 isBundle=true processName=com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 isIsolated=true
+03-10 15:02:06.143   350   503 D goldfish-address-space: claimShared: Ask to claim region [0x1f5dc4000 0x1f63a0000]
+03-10 15:02:06.166  5277  5277 W SystemServiceRegistry: No service published for: uimode
+03-10 15:02:06.177  5277  5277 I cr_ChildProcessService: Creating new ChildProcessService pid=5277
+03-10 15:02:06.193  1087  1087 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=140.0, y[0]=725.0, toolType[0]=TOOL_TYPE_UNKNOWN, buttonState=BUTTON_PRIMARY, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=133657, downTime=133657, deviceId=-1, source=0x1002, displayId=0, eventId=-863752519 }
+03-10 15:02:06.193  1087  1087 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=140.0, y[0]=725.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=BUTTON_PRIMARY, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=133701, downTime=133657, deviceId=-1, source=0x1002, displayId=0, eventId=-546860570 }
+03-10 15:02:06.204   779   992 D EGL_emulation: app_time_stats: avg=16.89ms min=1.29ms max=189.31ms count=37
+03-10 15:02:06.213  1087  1087 I Choreographer: Skipped 45 frames!  The application may be doing too much work on its main thread.
+03-10 15:02:06.240  5277  5294 I cr_LibraryLoader: Successfully loaded native library
+03-10 15:02:06.249   541   565 W system_server: Long monitor contention with owner binder:541_15 (1792) at boolean com.android.server.wm.ActivityClientController.finishActivity(android.os.IBinder, int, android.content.Intent, int)(ActivityClientController.java:476) waiters=1 in void com.android.server.wm.RootWindowContainer$RankTaskLayersRunnable.run() for 155ms
+03-10 15:02:06.262  5277  5294 I cr_CachingUmaRecorder: Flushed 11 samples from 11 histograms.
+03-10 15:02:06.265  5206  5206 D LifecycleMonitor: Lifecycle status change: com.example.android.scorekeeper.MainActivity@ab4d95 in: PAUSED
+03-10 15:02:06.267   408   408 I BpBinder: onLastStrongRef automatically unlinking death recipients: <uncached descriptor>
+03-10 15:02:06.342  5206  5235 I TestRunner: finished: scorePlusMinusTest(com.example.android.scorekeeper.ScorePlusMinusTest)
